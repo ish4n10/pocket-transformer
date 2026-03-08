@@ -45,7 +45,7 @@ def get_batch(data, batch_size, seq_len, device):
     return x.to(device), y.to(device)
 
 if __name__ == "__main__":
-    train, val = prepare_data(r"G:\attention-is-all-you-need\train-00000-of-00080.parquet")
+    train, val = prepare_data(r"somepath")
     device = "cuda" if torch.cuda.is_available() else "cpu"
     x, y   = get_batch(train, batch_size=4, seq_len=256, device=device)
     print(f"x: {x.shape} y: {y.shape}")
